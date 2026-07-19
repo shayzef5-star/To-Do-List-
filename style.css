@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    background: #0a0a0a;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -15,12 +15,13 @@ body {
 }
 
 .container {
-    background-color: white;
+    background: #1a1a1a;
     width: 100%;
     max-width: 600px;
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 35px rgba(255, 140, 0, 0.15);
     padding: 30px;
+    border: 1px solid rgba(255, 140, 0, 0.1);
 }
 
 header {
@@ -29,7 +30,7 @@ header {
 }
 
 header h1 {
-    color: #333;
+    color: #ff8c00;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
@@ -37,8 +38,12 @@ header h1 {
     gap: 15px;
 }
 
+header h1 i {
+    color: #ff8c00;
+}
+
 .subtitle {
-    color: #666;
+    color: rgba(255, 255, 255, 0.5);
     font-style: italic;
     font-size: 0.9rem;
 }
@@ -52,35 +57,42 @@ header h1 {
 #taskInput {
     flex: 1;
     padding: 15px;
-    border: 2px solid #ddd;
+    border: 2px solid rgba(255, 140, 0, 0.2);
     border-radius: 12px;
     font-size: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
     transition: all 0.3s;
+}
+
+#taskInput::placeholder {
+    color: rgba(255, 255, 255, 0.3);
 }
 
 #taskInput:focus {
     outline: none;
-    border-color: #6a11cb;
-    box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
+    border-color: #ff8c00;
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.15);
 }
 
 .btn {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    color: white;
+    background: linear-gradient(135deg, #ff8c00, #ff4500);
+    color: #0a0a0a;
     border: none;
     border-radius: 12px;
     padding: 0 25px;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
     display: flex;
     align-items: center;
     gap: 8px;
+    box-shadow: 0 4px 20px rgba(255, 140, 0, 0.3);
 }
 
 .btn:hover {
-    opacity: 0.9;
     transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255, 140, 0, 0.5);
 }
 
 .filters {
@@ -93,18 +105,24 @@ header h1 {
 
 .filter-btn {
     padding: 8px 20px;
-    border: 2px solid #e0e0e0;
-    background: white;
+    border: 2px solid rgba(255, 140, 0, 0.2);
+    background: transparent;
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s;
     font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.filter-btn:hover {
+    border-color: #ff8c00;
+    color: white;
 }
 
 .filter-btn.active {
-    background-color: #6a11cb;
-    color: white;
-    border-color: #6a11cb;
+    background: linear-gradient(135deg, #ff8c00, #ff4500);
+    color: #0a0a0a;
+    border-color: #ff8c00;
 }
 
 #taskList {
@@ -117,10 +135,10 @@ header h1 {
     justify-content: space-between;
     align-items: center;
     padding: 18px;
-    background-color: #f9f9f9;
+    background: rgba(255, 255, 255, 0.04);
     border-radius: 12px;
     margin-bottom: 12px;
-    border-left: 5px solid #2575fc;
+    border-left: 5px solid #ff8c00;
     transition: all 0.3s;
     animation: fadeIn 0.5s;
 }
@@ -131,19 +149,20 @@ header h1 {
 }
 
 .task-item.completed {
-    opacity: 0.7;
+    opacity: 0.5;
     border-left-color: #4CAF50;
 }
 
 .task-item.completed .task-text {
     text-decoration: line-through;
-    color: #888;
+    color: rgba(255, 255, 255, 0.4);
 }
 
 .task-text {
     flex: 1;
     margin-right: 15px;
     word-break: break-word;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .task-actions {
@@ -171,7 +190,8 @@ header h1 {
 }
 
 .complete-btn:hover {
-    background-color: rgba(76, 175, 80, 0.1);
+    background-color: rgba(76, 175, 80, 0.15);
+    transform: scale(1.1);
 }
 
 .delete-btn {
@@ -179,7 +199,8 @@ header h1 {
 }
 
 .delete-btn:hover {
-    background-color: rgba(255, 71, 87, 0.1);
+    background-color: rgba(255, 71, 87, 0.15);
+    transform: scale(1.1);
 }
 
 .stats {
@@ -187,19 +208,30 @@ header h1 {
     justify-content: space-between;
     align-items: center;
     padding-top: 20px;
-    border-top: 2px dashed #eee;
+    border-top: 2px dashed rgba(255, 140, 0, 0.15);
     flex-wrap: wrap;
     gap: 15px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.stats strong {
+    color: #ff8c00;
 }
 
 .btn-small {
-    background-color: #ff4757;
+    background: linear-gradient(135deg, #ff4757, #c0392b);
     color: white;
     border: none;
     padding: 8px 16px;
     border-radius: 10px;
     cursor: pointer;
     font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.btn-small:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 71, 87, 0.3);
 }
 
 @media (max-width: 768px) {
