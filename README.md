@@ -41,10 +41,6 @@ A simple and convenient task management app built with vanilla JavaScript. It al
 
 [Посмотреть работающий сайт](https://shayzef5-star.github.io/To-Do-List-)
 
-## 📸 Preview
-
-![Screenshot of the To-Do list](https://shayzef5-star.github.io/To-Do-List-/Preview.jpg)
-
 ## 🛠️ Используемые технологии
 
 *   HTML5
