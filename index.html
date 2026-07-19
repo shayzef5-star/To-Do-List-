@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Умный Список Задач</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-tasks"></i>Список дел</h1>
+            <p class="subtitle">// Веди список дел на день</p>
+        </header>
+
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Например: Покормить кошку" autofocus>
+            <button id="addBtn" class="btn"><i class="fas fa-plus"></i> Добавить</button>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Все</button>
+            <button class="filter-btn" data-filter="pending">В работе</button>
+            <button class="filter-btn" data-filter="completed">Выполненные</button>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <div class="stats">
+            <span>Задач всего: <strong id="totalCount">0</strong></span>
+            <span>Осталось сделать: <strong id="pendingCount">0</strong></span>
+            <button id="clearCompleted" class="btn-small">удалить прогресс</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
